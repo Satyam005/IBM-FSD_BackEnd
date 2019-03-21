@@ -1,0 +1,40 @@
+	<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Bean instantiation with default constructor -->
+	<bean id="greetings" class="com.examples.spring.core.Greetings" >
+		<property name="message" value="Hello World message from config file" />
+	</bean>	
+	
+	<bean id="greetings1" class="com.examples.spring.core.Greetings" >
+		<property name="message" value="Hello World message from config file - Greetings1" />
+	</bean>	
+
+<bean id="date" class="java.time.LocalDate" factory-method="parse">
+		<constructor-arg index="0" value="1996-07-23"/>
+	</bean>
+
+	
+<bean id="addressBean" class="com.examples.spring.core.Address">
+		<constructor-arg name="city" value="Meerut"/>
+		<constructor-arg name="pin" value="250001"/>
+		<constructor-arg name="country" value="India"/>
+	</bean>
+	<bean id="employee" class="com.examples.spring.core.Employee">
+		<constructor-arg name="id" value="1"/>
+		<constructor-arg name="name" value="Rahul"/>
+		<constructor-arg name="address" ref="addressBean"/>
+		<constructor-arg name="salary" value="99000"/>
+		<property name="dob" ref="date" />
+		<property name="designation" value="Developer" />
+		<property name="skills">
+			<list>
+				<value>Mean Stack</value>
+				<value>Java</value>
+			</list>
+		</property>
+		<property name="fulltime" value="true" />
+	</bean>
+	</beans>

@@ -11,8 +11,8 @@ public class EmployeeManager {
 			do {
 				int exit = -1;
 				System.out.println();
-				System.out.println("--------------------EMPLOYEE MANAGEMENT--------------------");
-				System.out.println("                    ____________________                     \n");
+				System.out.println("--------------------WELCOME TO EMPLOYEE MANAGEMENT APP...!!!--------------------");
+				System.out.println("                    ________________________________________                   \n");
 				System.out.println("1.\t\tADD EMPLOYEES");
 				System.out.println("2.\t\tVIEW EMPLOYEES");
 				System.out.println("3.\t\tSEARCH EMPLOYEES");

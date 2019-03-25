@@ -1,0 +1,31 @@
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="date" class="java.time.LocalDate" factory-method="parse">
+		<constructor-arg index="0" value="1995-03-12"/>
+	</bean>
+
+	<bean id="address" class="com.assignment02.spring.core.autowiring.Address">
+		<constructor-arg name="city" value="Meerut"/>
+		<constructor-arg name="pin" value="250001"/>
+		<constructor-arg name="country" value="India"/>
+	</bean>
+
+	<bean id="employee" class="com.assignment02.spring.core.autowiring.Employee" autowire="constructor">
+		<constructor-arg name="id" value="1"/>
+		<constructor-arg name="name" value="Rahul"/>
+		<!-- <constructor-arg name="address" ref="addressBean"/> commented because of auto wiring-->
+		<constructor-arg name="salary" value="76000"/>
+		<!-- <property name="dob" ref="date" /> commented because of auto wiring-->
+		<property name="designation" value="Project Manager" />
+		<property name="skills">
+			<list>
+				<value>Machine Learning</value>
+				<value>Java</value>
+			</list>
+		</property>
+		<property name="fulltime" value="true" />
+	</bean>
+
+</beans>
